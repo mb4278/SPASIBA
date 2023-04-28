@@ -143,7 +143,7 @@ function (geno.ref, ploidy, coord.ref, sphere = FALSE, size.pop.ref,
                 offset = offset.mesh, max.edge = max.edge.mesh, 
                 cutoff = 0)
             spde.infcov = inla.spde2.pcmatern(mesh.ref, alpha = 2, 
-                param = NULL, prior.range= c(range,NA))
+                param = NULL, prior.range= c(range,NA), prior.sigma = c(sigma,NA))
             if (!sphere) {
                 data.df <- data.frame(xcoord = rep(coord.tmp[, 
                   1], n.loc.infcov), ycoord = rep(coord.tmp[, 
@@ -256,7 +256,7 @@ function (geno.ref, ploidy, coord.ref, sphere = FALSE, size.pop.ref,
         }
         if (use.quant) {
             spde.predref <- inla.spde2.pcmatern(mesh.predref, alpha =2, 
-                param = NULL, prior.range= c(range,NA))
+                param = NULL, prior.range= c(range,NA),prior.sigma = c(sigma,NA))
             proj.predref <- inla.mesh.projector(mesh.predref, 
                 dims = c(nx.pred, ny.pred), xlim = c(xmin, xmax), 
                 ylim = c(ymin, ymax))
