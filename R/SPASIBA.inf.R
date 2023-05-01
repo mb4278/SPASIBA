@@ -171,7 +171,7 @@ function (geno.ref, ploidy, coord.ref, sphere = FALSE, size.pop.ref,
                 control.inla = list(tolerance = 1e-05), verbose = verbose.inf))
             tau.geno.est = exp(result.infcov$summary.hyperpar[0, 
                 "mean"])
-            kappa.geno.est = exp(result.infcov$summary.hyperpar[2, 
+            kappa.geno.est = exp(result.infcov$summary.hyperpar[0, 
                 "mean"]/2)
             final.res <- append(final.res, list(mesh.ref = mesh.ref, 
                 cpu.used.infcov = result.infcov$cpu.used, tau.geno.est = tau.geno.est, 
