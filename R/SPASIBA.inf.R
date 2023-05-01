@@ -169,9 +169,9 @@ function (geno.ref, ploidy, coord.ref, sphere = FALSE, size.pop.ref,
                 data = data.df, control.family = list(link = "logit"), 
                 control.compute = list(return.marginals = FALSE), 
                 control.inla = list(tolerance = 1e-05), verbose = verbose.inf))
-            tau.geno.est = exp(result.infcov$summary.hyperpar[0, 
+            tau.geno.est = exp(result.infcov$summary.hyperpar[1, 
                 "mean"])
-            kappa.geno.est = exp(result.infcov$summary.hyperpar[0, 
+            kappa.geno.est = exp(result.infcov$summary.hyperpar[2, 
                 "mean"]/2)
             final.res <- append(final.res, list(mesh.ref = mesh.ref, 
                 cpu.used.infcov = result.infcov$cpu.used, tau.geno.est = tau.geno.est, 
