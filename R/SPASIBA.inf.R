@@ -235,7 +235,7 @@ function (geno.ref, ploidy, coord.ref, sphere = FALSE, size.pop.ref,
                 result.predref <- (inla(formula, family = "binomial", 
                   Ntrials = size.pop.predref[, iloc], data = data.df, 
                   control.family = list(link = "logit"), control.compute = list(return.marginals = FALSE), 
-                  control.inla = list(tolerance = 1e-05), verbose = inla.getOption("verbose"))
+                  control.inla = list(tolerance = 1e-05), verbose = inla.getOption("verbose")))
                 cpu.used.predfreq.perloc[iloc, ] <- result.predref$cpu.used
                 n.mesh.spde.predref <- length(result.predref$summary.random$spatial[, 
                   "mean"])
